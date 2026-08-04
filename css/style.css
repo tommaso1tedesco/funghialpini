@@ -1,0 +1,490 @@
+/* =========================================================
+   FunghiAlpini — stile mobile-first, tema natura, alto contrasto.
+   Pensato per essere leggibile alla luce diretta del sole e
+   usabile con una mano durante un'escursione.
+   ========================================================= */
+
+:root {
+  /* Palette "bosco": verdi scuri, terra, crema. Contrasti alti. */
+  --color-bg: #f6f3ea;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef2e6;
+  --color-text: #1f2a17;
+  --color-text-muted: #4b5340;
+  --color-border: #c9c2ab;
+  --color-primary: #2f4a2b;
+  --color-primary-dark: #1f3320;
+  --color-accent: #a34f2e;
+
+  /* Badge commestibilità: verde/giallo/rosso/nero, ben distinti anche
+     per chi ha deficit di visione dei colori (uso anche icone/testo). */
+  --edibile-commestibile: #1e7d32;
+  --edibile-cautela: #b8860b;
+  --edibile-nonconsumare: #d2601f;
+  --edibile-tossico: #c62828;
+  --edibile-mortale: #111111;
+  --edibile-nd: #5c5c5c;
+
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --tap-min: 48px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #14180f;
+    --color-surface: #1d2417;
+    --color-surface-alt: #232b1a;
+    --color-text: #f1efe4;
+    --color-text-muted: #c3c9b4;
+    --color-border: #3a4530;
+    --color-primary: #7fbf6f;
+    --color-primary-dark: #63a355;
+    --color-accent: #e08a55;
+    --edibile-mortale: #f2f2f2;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; color: var(--color-text); }
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.1rem; }
+p { margin: 0 0 .75em; }
+
+a { color: var(--color-primary); }
+
+img, svg { max-width: 100%; display: block; }
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Barra superiore ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: calc(10px + var(--safe-top)) 14px 10px;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.topbar-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.15rem; }
+.topbar-logo { font-size: 1.4rem; }
+
+.conn-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.15);
+}
+.conn-dot { width: 9px; height: 9px; border-radius: 50%; background: #9e9e9e; }
+.conn-online .conn-dot { background: #6fe27a; box-shadow: 0 0 6px #6fe27a; }
+.conn-offline .conn-dot { background: #ffb15c; box-shadow: 0 0 6px #ffb15c; }
+
+/* ---------- Contenuto ---------- */
+#view-root {
+  flex: 1 1 auto;
+  padding: 14px 14px calc(90px + var(--safe-bottom));
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  outline: none;
+}
+
+/* ---------- Navigazione inferiore ---------- */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-bottom: var(--safe-bottom);
+  box-shadow: 0 -2px 10px rgba(0,0,0,.08);
+}
+
+.nav-btn {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 2px 10px;
+  min-height: var(--tap-min);
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: .72rem;
+  font-weight: 600;
+  border-top: 3px solid transparent;
+}
+.nav-btn .nav-icon { font-size: 1.35rem; }
+.nav-btn.active {
+  color: var(--color-primary);
+  border-top-color: var(--color-primary);
+  background: var(--color-surface-alt);
+}
+
+/* ---------- Componenti generici ---------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--tap-min);
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:active { transform: scale(.98); }
+.btn.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+}
+.btn.btn-ghost {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.btn.btn-block { width: 100%; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 8px 6px 16px;
+  margin-bottom: 16px;
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1.05rem;
+  min-height: 40px;
+  color: var(--color-text);
+}
+.search-box .search-icon { font-size: 1.2rem; opacity: .7; }
+
+/* ---------- Badge di commestibilità ---------- */
+.badge-edibilita {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .9rem;
+  color: #fff;
+  letter-spacing: .01em;
+}
+.badge-edibilita .dot { font-size: 1rem; }
+.badge-commestibile { background: var(--edibile-commestibile); }
+.badge-commestibile_con_cautela { background: var(--edibile-cautela); color: #1f1a05; }
+.badge-da_non_consumare { background: var(--edibile-nonconsumare); }
+.badge-tossico { background: var(--edibile-tossico); }
+.badge-mortale { background: var(--edibile-mortale); }
+.badge-non_determinato { background: var(--edibile-nd); }
+
+/* ---------- Griglia catalogo ---------- */
+.grid-catalogo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 480px) {
+  .grid-catalogo { grid-template-columns: repeat(3, 1fr); }
+}
+
+.specie-tile {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.specie-tile img { width: 100%; height: 96px; object-fit: cover; background: var(--color-surface-alt); }
+.specie-tile .tile-body { padding: 8px 10px 10px; }
+.specie-tile .tile-nome { font-weight: 700; font-size: .92rem; margin-bottom: 2px; }
+.specie-tile .tile-sci { font-style: italic; font-size: .76rem; color: var(--color-text-muted); margin-bottom: 6px; }
+.specie-tile .badge-edibilita { font-size: .68rem; padding: 4px 9px; }
+
+.empty-state {
+  text-align: center;
+  padding: 40px 16px;
+  color: var(--color-text-muted);
+}
+.empty-state .empty-icon { font-size: 2.4rem; margin-bottom: 10px; }
+
+/* ---------- Scheda specie ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  min-height: var(--tap-min);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+}
+.gallery figcaption { font-size: .7rem; text-align: center; color: var(--color-text-muted); margin-top: 3px; }
+.gallery figure { margin: 0; }
+
+.nomi-comuni { color: var(--color-text-muted); margin-bottom: 10px; }
+
+.info-row {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.info-row:last-child { border-bottom: none; }
+.info-row .info-icon { font-size: 1.2rem; flex: 0 0 auto; }
+.info-row .info-label { font-weight: 700; font-size: .82rem; color: var(--color-text-muted); display: block; }
+
+.carattere-item {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.carattere-item:last-child { border-bottom: none; }
+.carattere-item .tratto { font-weight: 700; text-transform: capitalize; display: block; margin-bottom: 2px; color: var(--color-primary-dark); }
+
+.sosia-card {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.sosia-card .sosia-nome { font-weight: 800; margin-bottom: 4px; }
+.sosia-card .sosia-diff { font-size: .92rem; }
+
+.disclaimer-box {
+  background: #fff4e5;
+  border: 2px solid var(--edibile-nonconsumare);
+  color: #4a2c0f;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: .9rem;
+  font-weight: 600;
+  margin: 14px 0;
+}
+@media (prefers-color-scheme: dark) {
+  .disclaimer-box { background: #2a2013; color: #f1e2c8; }
+}
+
+/* ---------- Riconoscimento guidato ---------- */
+.filtro-gruppo { margin-bottom: 16px; }
+.filtro-titolo { font-weight: 700; margin-bottom: 8px; display: block; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  min-height: 40px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: .88rem;
+  cursor: pointer;
+}
+.chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.risultati-count {
+  font-weight: 700;
+  margin: 18px 0 10px;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Fotocamera / diario ---------- */
+.diario-entry {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+}
+.diario-entry img { width: 84px; height: 84px; object-fit: cover; border-radius: 10px; flex: 0 0 auto; background: var(--color-surface-alt); }
+.diario-entry .diario-meta { font-size: .78rem; color: var(--color-text-muted); margin-bottom: 4px; }
+.diario-entry .diario-note { font-size: .92rem; white-space: pre-wrap; }
+.diario-entry .diario-actions { margin-top: 6px; display: flex; gap: 8px; }
+.diario-entry .diario-actions button {
+  font-size: .78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+textarea.note-input {
+  width: 100%;
+  min-height: 70px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  padding: 10px 12px;
+  resize: vertical;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.field-label { font-weight: 700; display: block; margin: 12px 0 6px; }
+input[type="text"], input[type="password"], input[type="url"] {
+  width: 100%;
+  min-height: var(--tap-min);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  padding: 8px 14px;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* ---------- AI assistant ---------- */
+.ai-candidato {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--color-text);
+}
+.ai-candidato .conf-bar-wrap {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-surface-alt);
+  overflow: hidden;
+  margin-top: 6px;
+}
+.ai-candidato .conf-bar { height: 100%; background: var(--color-primary); }
+.ai-candidato .conf-pct { font-weight: 800; font-size: 1.1rem; color: var(--color-primary); flex: 0 0 auto; }
+
+.offline-block {
+  text-align: center;
+  padding: 30px 16px;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(74px + var(--safe-bottom));
+  transform: translateX(-50%) translateY(20px);
+  background: var(--color-primary-dark);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 50;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---------- Utility ---------- */
+.mt-0 { margin-top: 0; }
+.text-muted { color: var(--color-text-muted); }
+.section-title { display: flex; align-items: center; gap: 8px; margin: 20px 0 10px; }
+.section-title:first-child { margin-top: 0; }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface-alt) 25%, var(--color-border) 37%, var(--color-surface-alt) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--radius-md);
+}
+@keyframes skeleton-loading {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
