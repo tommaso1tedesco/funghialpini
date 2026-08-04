@@ -1,10 +1,9 @@
 /**
- * ai.js — modulo OPZIONALE di riconoscimento tramite servizio esterno
- * (es. Kindwise mushroom.id, plant.id o compatibili). Funziona SOLO online:
- * l'utente inserisce endpoint e API key una volta, salvati in IndexedDB.
- *
- * Nessuna chiave è preimpostata: senza configurazione il modulo resta
- * disattivato e l'app rimanda al Riconoscimento guidato locale.
+ * ai.js — riconoscimento funghi da foto tramite servizio esterno
+ * (es. Kindwise mushroom.id o compatibile). È la funzione centrale
+ * dell'app: richiede connessione e una API key personale, inserita una
+ * volta nella schermata Impostazioni e salvata solo su questo dispositivo
+ * (localStorage).
  *
  * Formato di richiesta/risposta atteso di default: API Kindwise
  * (POST JSON { images:["data:image/jpeg;base64,..."] }, header "Api-Key",
@@ -12,24 +11,23 @@
  * Se usi un provider diverso, adatta solo la funzione `interpretaRisposta`.
  */
 const FunghiAI = (() => {
-  const KEY_ENDPOINT = "ai_endpoint";
-  const KEY_APIKEY = "ai_api_key";
+  const KEY_ENDPOINT = "funghialpini_ai_endpoint";
+  const KEY_APIKEY = "funghialpini_ai_api_key";
 
-  async function getConfig() {
-    const [endpoint, apiKey] = await Promise.all([
-      FunghiDB.getSetting(KEY_ENDPOINT, ""),
-      FunghiDB.getSetting(KEY_APIKEY, ""),
-    ]);
-    return { endpoint, apiKey };
+  function getConfig() {
+    return {
+      endpoint: localStorage.getItem(KEY_ENDPOINT) || "",
+      apiKey: localStorage.getItem(KEY_APIKEY) || "",
+    };
   }
 
-  async function setConfig({ endpoint, apiKey }) {
-    await FunghiDB.setSetting(KEY_ENDPOINT, endpoint || "");
-    await FunghiDB.setSetting(KEY_APIKEY, apiKey || "");
+  function setConfig({ endpoint, apiKey }) {
+    localStorage.setItem(KEY_ENDPOINT, endpoint || "");
+    localStorage.setItem(KEY_APIKEY, apiKey || "");
   }
 
-  async function isConfigurato() {
-    const { endpoint, apiKey } = await getConfig();
+  function isConfigurato() {
+    const { endpoint, apiKey } = getConfig();
     return Boolean(endpoint && apiKey);
   }
 
@@ -63,39 +61,35 @@ const FunghiAI = (() => {
     const parole = nomeAI.toLowerCase().split(/\s+/).filter(Boolean);
     const genere = parole[0] || "";
     const tutte = FunghiData.all();
-    // 1. match esatto sul nome scientifico
     let trovato = tutte.find((s) => s.nome_scientifico.toLowerCase() === nomeAI.toLowerCase());
     if (trovato) return trovato;
-    // 2. match sul solo genere (prima parola del nome scientifico)
     trovato = tutte.find((s) => s.nome_scientifico.toLowerCase().startsWith(genere));
     if (trovato) return trovato;
-    // 3. match su nomi comuni
     trovato = tutte.find((s) => s.nomi_comuni.some((n) => n.toLowerCase().includes(nomeAI.toLowerCase())));
     return trovato || null;
   }
 
+  /**
+   * Invia la foto al servizio configurato e restituisce i candidati arricchiti
+   * con i dati locali (commestibilità, caratteri, sosia) quando disponibili.
+   */
   async function identifica(fileBlob) {
-    if (!navigator.onLine) {
-      throw new Error("OFFLINE");
-    }
-    const { endpoint, apiKey } = await getConfig();
-    if (!endpoint || !apiKey) {
-      throw new Error("NON_CONFIGURATO");
-    }
+    if (!navigator.onLine) throw new Error("OFFLINE");
+    const { endpoint, apiKey } = getConfig();
+    if (!endpoint || !apiKey) throw new Error("NON_CONFIGURATO");
+
     const base64 = await blobToBase64(fileBlob);
     const res = await fetch(endpoint, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Api-Key": apiKey,
-      },
+      headers: { "Content-Type": "application/json", "Api-Key": apiKey },
       body: JSON.stringify({ images: [base64] }),
     });
-    if (!res.ok) {
-      throw new Error(`Errore del servizio AI (HTTP ${res.status})`);
-    }
+    if (!res.ok) throw new Error(`Errore del servizio AI (HTTP ${res.status})`);
+
     const json = await res.json();
     const grezzi = interpretaRisposta(json);
+    if (grezzi.length === 0) throw new Error("NESSUN_CANDIDATO");
+
     return grezzi
       .map((c) => ({ ...c, specieLocale: abbinaSpecieLocale(c.nome) }))
       .sort((a, b) => b.confidenza - a.confidenza);

@@ -30,7 +30,7 @@
   });
   window.addEventListener("offline", () => {
     aggiornaIndicatoreConnessione();
-    window.mostraToast("Sei offline: catalogo e riconoscimento guidato restano disponibili");
+    window.mostraToast("Sei offline: il riconoscimento da foto richiede connessione");
   });
 
   function registraServiceWorker() {

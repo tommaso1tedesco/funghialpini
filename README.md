@@ -1,36 +1,80 @@
 # FunghiAlpini
 
-PWA mobile-first per il primo riconoscimento dei funghi durante escursioni in
-montagna, pensata per funzionare **completamente offline** dopo il primo
-caricamento (in montagna spesso manca il segnale).
+PWA mobile-first per il riconoscimento dei funghi da foto: scatti (o carichi)
+una foto, l'app la invia a un servizio di riconoscimento AI e ti mostra la
+specie più probabile — nome scientifico, nome comune, commestibilità — oltre
+ad eventuali specie simili con cui potrebbe essere confusa, con le
+caratteristiche concrete per distinguerle.
 
 ⚠️ **È uno strumento di supporto al riconoscimento, non un sostituto di un
 esperto.** Per il consumo, fai sempre verificare i funghi da un esperto o
 dall'Ispettorato Micologico della tua ASL (servizio gratuito in tutta
 Italia).
 
+## Come funziona
+
+1. Apri l'app, tab principale "Riconosci".
+2. Scatti o carichi una foto del fungo.
+3. La foto viene inviata al servizio AI configurato in Impostazioni.
+4. L'app mostra il **risultato più probabile** (nome, commestibilità,
+   caratteri di riconoscimento) e, se disponibili, fino a 4 **alternative**
+   con le differenze concrete rispetto al risultato principale.
+
+Il riconoscimento vero e proprio richiede sempre connessione internet: non
+esiste un modello affidabile che riconosca funghi offline su un telefono.
+L'app stessa (schermate Impostazioni/Info) resta invece consultabile anche
+offline dopo il primo caricamento, grazie al service worker.
+
 ## Stack
 
 - HTML/CSS/JS vanilla, nessuna dipendenza a runtime.
-- Service Worker + Cache API per l'offline.
+- Service worker + Cache API per l'app shell offline.
 - Web App Manifest installabile (icona in home, modalità standalone).
-- IndexedDB per foto e appunti del diario personale.
+- `data/funghi.json`: database locale di ~30 specie alpine (commestibilità,
+  caratteri di riconoscimento, sosia) usato per arricchire i risultati
+  dell'AI — l'AI riconosce la specie nella foto, il database locale dice se
+  è commestibile e come distinguerla dai sosia pericolosi.
+
+## Configurare il riconoscimento AI (obbligatorio)
+
+Senza questa configurazione l'app non può analizzare foto. Serve una API key
+di un servizio di riconoscimento immagini per funghi.
+
+### Con Kindwise (mushroom.id) — consigliato
+
+1. Vai su **https://mushroom.id** e registrati (email o account Google).
+   Il piano gratuito include un numero limitato di richieste al mese,
+   sufficiente per un uso personale occasionale.
+2. Nella tua area personale cerca la sezione **API / Developer** e genera
+   una **API key**.
+3. Prendi nota dell'endpoint di identificazione indicato nella
+   documentazione (tipicamente qualcosa come
+   `https://mushroom.id/api/v1/identification`).
+4. Apri FunghiAlpini → icona ⚙️ Impostazioni → incolla endpoint e API key →
+   **Salva**.
+
+La chiave viene salvata **solo su questo dispositivo** (`localStorage` del
+browser): non viene mai inviata altrove se non al servizio AI che tu stesso
+configuri, insieme alla singola foto che analizzi.
+
+### Con un provider diverso
+
+Qualunque servizio che accetti una foto via HTTP e restituisca una lista di
+specie candidate va bene. Se il formato della risposta è diverso da quello
+Kindwise, adatta la sola funzione `interpretaRisposta()` in `js/ai.js`:
+deve restituire un array di `{ nome, confidenza }` (confidenza tra 0 e 1)
+a partire dal JSON di risposta del tuo provider.
 
 ## Avvio in locale
 
-Serve un server HTTP qualsiasi (i Service Worker non funzionano da
+Serve un server HTTP qualsiasi (i service worker non funzionano da
 `file://`):
 
 ```bash
 cd FUNGHETTO
 python3 -m http.server 8080
-# poi apri http://localhost:8080 nel browser del telefono o del computer
+# poi apri http://localhost:8080 nel browser
 ```
-
-Al primo caricamento (online) l'app precarica in cache tutto l'occorrente
-per funzionare offline: da quel momento puoi disattivare il Wi-Fi/dati e
-l'app continua a funzionare (catalogo, schede, sosia, riconoscimento
-guidato). Solo l'Assistente AI richiede connessione.
 
 ## Installare la PWA sullo smartphone
 
@@ -39,112 +83,55 @@ guidato). Solo l'Assistente AI richiede connessione.
 - **iPhone (Safari)**: apri il sito, tocca l'icona Condividi → "Aggiungi a
   Home".
 
-Da quel momento l'app si apre a schermo intero, senza barra del browser
-(modalità `standalone`), con l'icona 🍄 in home.
-
 ## Struttura del progetto
 
 ```
 index.html          shell dell'app (single page, navigazione via hash)
-manifest.json        manifest PWA
-sw.js                 service worker (cache offline)
-css/style.css         stile mobile-first, tema natura, alto contrasto
+manifest.json         manifest PWA
+sw.js                  service worker (cache offline dell'app shell)
+css/style.css          stile mobile-first, tema natura, alto contrasto
 js/
-  db.js               wrapper IndexedDB (diario + impostazioni)
-  data.js              caricamento/interrogazione data/funghi.json
-  guided.js            stato e logica del riconoscimento guidato
-  camera.js             cattura foto e gestione diario
-  ai.js                 modulo opzionale assistente AI (solo online)
-  views.js               rendering delle schermate
-  router.js              micro-router basato su hash
-  app.js                  bootstrap app (SW, indicatore online/offline)
-data/funghi.json      database delle specie (vedi sotto)
-assets/img/            immagini delle specie (3 per specie)
+  data.js              caricamento/interrogazione data/funghi.json,
+                       confronto caratteri fra due specie (sosia)
+  ai.js                 invio foto al servizio AI, parsing risposta,
+                        abbinamento al database locale
+  views.js               le 3 schermate: Riconosci, Impostazioni, Info
+  router.js               micro-router basato su hash
+  app.js                   bootstrap app (service worker, indicatore online/offline)
+data/funghi.json      database locale delle specie
 assets/icons/           icone PWA
-scripts/                script Python di utilità (generazione immagini/icone)
+scripts/generate_icons.py  script di utilità per rigenerare le icone PWA
 ```
 
-## Come aggiungere una nuova specie
+## Come ampliare il database locale
 
-1. Apri `data/funghi.json`: è un array di oggetti, uno per specie. Copia un
-   oggetto esistente come modello e modifica i campi:
+Il database serve ad arricchire i risultati dell'AI (commestibilità,
+caratteri, sosia), non per una navigazione a catalogo. Per aggiungere una
+specie, apri `data/funghi.json` (array di oggetti) e copia una voce
+esistente come modello:
 
-   | Campo | Descrizione |
-   |---|---|
-   | `id` | slug univoco, minuscolo con trattini (es. `boletus-edulis`) |
-   | `nome_scientifico` | nome scientifico completo |
-   | `nomi_comuni` | array di nomi italiani/dialettali |
-   | `commestibilita` | uno tra `commestibile`, `commestibile_con_cautela`, `da_non_consumare`, `tossico`, `mortale`, `non_determinato` |
-   | `habitat` / `habitat_tipo` | testo libero + array tra `conifere`, `latifoglie`, `misto`, `prateria` (usato dal riconoscimento guidato) |
-   | `stagione` / `stagione_tipo` | testo libero + array tra `primavera`, `estate`, `autunno`, `inverno` |
-   | `colore_cappello` | array di colori in italiano, usato come filtro guidato |
-   | `imenoforo_tipo` | uno tra `lamelle`, `pori`, `aghi`, `pieghe` |
-   | `anello` / `volva` / `viraggio` | booleani, usati come filtro guidato |
-   | `descrizione` | testo descrittivo libero |
-   | `caratteri_riconoscimento` | array di `{ "tratto": "...", "valore": "..." }` mostrati nella scheda |
-   | `immagini` | array di **3** path: `[cappello, imenoforo, gambo]` dentro `assets/img/` |
-   | `sosia` | array di `{ "nome": "...", "come_distinguerli": "..." }`: differenze CONCRETE e verificabili sul campo |
+| Campo | Descrizione |
+|---|---|
+| `id` | slug univoco, minuscolo con trattini |
+| `nome_scientifico` | nome scientifico completo |
+| `nomi_comuni` | array di nomi italiani/dialettali |
+| `commestibilita` | uno tra `commestibile`, `commestibile_con_cautela`, `da_non_consumare`, `tossico`, `mortale`, `non_determinato` |
+| `habitat` / `stagione` | testo libero |
+| `imenoforo_tipo` | uno tra `lamelle`, `pori`, `aghi`, `pieghe` (usato anche nel confronto automatico fra specie) |
+| `anello` / `volva` / `viraggio` | booleani (usati anche nel confronto automatico) |
+| `descrizione` | testo descrittivo libero |
+| `caratteri_riconoscimento` | array di `{ "tratto": "...", "valore": "..." }` |
+| `sosia` | array di `{ "nome": "...", "come_distinguerli": "..." }`: differenze CONCRETE, mostrate quando l'AI propone questa specie come alternativa a una simile |
 
-2. Aggiungi le 3 foto in `assets/img/` con i nomi indicati in `immagini`
-   (consigliato: `<id>-cappello.jpg`, `<id>-imenoforo.jpg`, `<id>-gambo.jpg`).
-   Le immagini attualmente presenti sono **illustrazioni segnaposto generate
-   automaticamente** (vedi sotto): sostituiscile con foto reali scattate sul
-   campo appena possibile, mantenendo lo stesso nome file.
-
-3. Apri `sw.js` e incrementa `CACHE_VERSION` (es. `v1` → `v2`): questo forza
-   il service worker a rigenerare la cache con la nuova specie/foto al
-   prossimo avvio online dell'app.
-
-4. Non serve altro: catalogo, ricerca, riconoscimento guidato e sosia
-   leggono tutti direttamente da `data/funghi.json`.
-
-### Rigenerare le immagini segnaposto
-
-Se aggiungi specie senza avere ancora foto reali, puoi rigenerare le
-illustrazioni segnaposto per tutte le specie del dataset con:
-
-```bash
-python3 scripts/generate_placeholders.py
-```
-
-Lo script legge `data/funghi.json`, deduce colore e forma dai campi
-`colore_cappello`/`imenoforo_tipo`/`anello`/`volva` e scrive i 3 SVG per
-ogni specie in `assets/img/`. Sostituisci pure i file generati con foto
-reali in qualsiasi momento: basta mantenere lo stesso path indicato in
-`immagini`.
-
-## Come attivare l'Assistente AI (opzionale)
-
-L'Assistente AI è disattivo di default: nessuna chiave è pre-configurata.
-Per attivarlo:
-
-1. Registrati presso un servizio di riconoscimento immagini per funghi
-   (es. [Kindwise mushroom.id](https://mushroom.id)) e ottieni un endpoint
-   API e una API key personale.
-2. Apri l'app → tab **Assistente** → inserisci endpoint e API key nella
-   sezione "Configurazione servizio" → **Salva configurazione**.
-3. Da quel momento, quando sei online, puoi scattare/caricare una foto e
-   ricevere una lista di candidati con percentuale di confidenza, ognuno
-   collegato alla scheda locale corrispondente se presente nel database.
-
-La chiave viene salvata **solo in locale** (IndexedDB del browser), non
-viene mai inviata altrove se non al servizio AI che tu stesso configuri.
-
-Il formato di richiesta/risposta di default replica l'API Kindwise
-(`POST` JSON con header `Api-Key`, risposta in
-`result.classification.suggestions`). Se usi un provider diverso con un
-formato differente, adatta la sola funzione `interpretaRisposta()` in
-`js/ai.js`.
-
-Offline, la tab Assistente si disattiva automaticamente e rimanda al
-Riconoscimento guidato, che funziona sempre senza rete.
+L'abbinamento fra il nome restituito dall'AI e una voce di questo database
+avviene per nome scientifico/comune in `js/ai.js` (`abbinaSpecieLocale`):
+non serve altro codice per far comparire una nuova specie nei risultati.
 
 ## Note sul dataset
 
-Il database (`data/funghi.json`) copre ~30 specie comuni sull'arco alpino,
-comprese le specie tossiche e mortali più rilevanti (*Amanita phalloides*,
-*Amanita virosa*, *Galerina marginata*, *Cortinarius orellanus*, *Gyromitra
-esculenta*, ecc.) con i rispettivi sosia commestibili, per allenare anche i
-casi pericolosi e non solo quelli "buoni". I contenuti sono a scopo
-didattico/di primo orientamento: non sostituiscono in nessun caso il parere
-di un esperto micologo.
+Il database copre ~30 specie comuni sull'arco alpino, comprese le specie
+tossiche e mortali più rilevanti (*Amanita phalloides*, *Amanita virosa*,
+*Galerina marginata*, *Cortinarius orellanus*, *Gyromitra esculenta*, ecc.)
+con i rispettivi sosia commestibili. I contenuti sono a scopo didattico/di
+primo orientamento: non sostituiscono in nessun caso il parere di un esperto
+micologo.

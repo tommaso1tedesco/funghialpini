@@ -1,20 +1,18 @@
 /**
- * sw.js — Service Worker per funzionamento 100% offline dopo il primo avvio.
+ * sw.js — Service Worker per funzionamento offline dell'app shell.
  *
  * Strategia:
  *  - "app shell" (HTML/CSS/JS/manifest/icone) e data/funghi.json: cache-first,
- *    con aggiornamento in background quando torna la rete.
- *  - Tutte le immagini elencate in data/funghi.json vengono precaricate
- *    all'installazione, cosi' catalogo, schede e confronto sosia funzionano
- *    interamente offline.
- *  - Richieste verso altri domini (es. servizio AI esterno) NON vengono mai
- *    intercettate: passano sempre alla rete, cosi' l'assistente AI resta
- *    "solo online" senza interferenze della cache.
+ *    con aggiornamento in background quando torna la rete. Questo permette
+ *    di aprire l'app e consultare Impostazioni/Info anche senza connessione.
+ *  - Il riconoscimento da foto richiede invece sempre una connessione attiva:
+ *    le richieste verso il servizio AI esterno (altro dominio) NON vengono
+ *    mai intercettate da questo service worker, passano sempre alla rete.
  *
  * Incrementa CACHE_VERSION quando modifichi file dell'app shell per forzare
  * l'aggiornamento della cache sui dispositivi degli utenti.
  */
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const CACHE_NAME = `funghialpini-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -22,10 +20,7 @@ const APP_SHELL = [
   "index.html",
   "manifest.json",
   "css/style.css",
-  "js/db.js",
   "js/data.js",
-  "js/guided.js",
-  "js/camera.js",
   "js/ai.js",
   "js/views.js",
   "js/router.js",
@@ -46,24 +41,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-
-      // 1. app shell
       await cache.addAll(APP_SHELL.map(toScopedUrl));
-
-      // 2. tutte le immagini delle specie, lette dal dataset appena messo in cache
-      try {
-        const res = await cache.match(toScopedUrl("data/funghi.json"));
-        const specie = await res.json();
-        const immaginiUrls = specie.flatMap((s) => s.immagini || []).map(toScopedUrl);
-        await Promise.all(
-          immaginiUrls.map((url) =>
-            cache.add(url).catch((err) => console.warn("Immagine non precaricabile:", url, err))
-          )
-        );
-      } catch (err) {
-        console.warn("Precaricamento immagini fallito:", err);
-      }
-
       await self.skipWaiting();
     })()
   );

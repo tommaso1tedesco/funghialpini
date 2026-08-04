@@ -1,65 +1,33 @@
 /**
  * router.js — micro-router basato su hash, senza dipendenze esterne.
- * Route supportate:
- *   #/catalogo[?q=...]
- *   #/specie/:id
- *   #/guidato
- *   #/diario
- *   #/ai
- *   #/info
+ * Route supportate: #/riconosci (default), #/impostazioni, #/info
  */
 const FunghiRouter = (() => {
   const viewRoot = document.getElementById("view-root");
 
   function parseHash() {
-    const raw = location.hash.replace(/^#/, "") || "/catalogo";
-    const [pathPart, queryPart] = raw.split("?");
-    const segments = pathPart.split("/").filter(Boolean);
-    const query = Object.fromEntries(new URLSearchParams(queryPart || ""));
-    return { segments, query };
-  }
-
-  function aggiornaNavAttiva(routeName) {
-    document.querySelectorAll(".nav-btn").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.route === routeName);
-    });
+    const raw = location.hash.replace(/^#/, "") || "/riconosci";
+    return raw.split("/").filter(Boolean)[0] || "riconosci";
   }
 
   async function render() {
-    const { segments, query } = parseHash();
-    const [primo, secondo] = segments;
-
-    let view, params = {}, routeName = primo || "catalogo";
-
-    switch (primo) {
-      case "specie":
-        view = FunghiViews.ViewSpecie;
-        params = { id: secondo };
-        routeName = "catalogo"; // la scheda specie fa parte del percorso "catalogo"
-        break;
-      case "guidato":
-        view = FunghiViews.ViewGuidato;
-        break;
-      case "diario":
-        view = FunghiViews.ViewDiario;
-        break;
-      case "ai":
-        view = FunghiViews.ViewAI;
+    const routeName = parseHash();
+    let view;
+    switch (routeName) {
+      case "impostazioni":
+        view = FunghiViews.ViewImpostazioni;
         break;
       case "info":
         view = FunghiViews.ViewInfo;
         break;
-      case "catalogo":
+      case "riconosci":
       default:
-        view = FunghiViews.ViewCatalogo;
-        params = { query: query.q || "" };
-        routeName = "catalogo";
+        view = FunghiViews.ViewRiconosci;
         break;
     }
 
-    viewRoot.innerHTML = view.render(params);
-    await view.afterRender(params);
-    aggiornaNavAttiva(routeName);
+    viewRoot.innerHTML = view.render();
+    await view.afterRender();
     window.scrollTo(0, 0);
     viewRoot.focus({ preventScroll: true });
   }
