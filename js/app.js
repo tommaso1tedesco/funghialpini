@@ -35,6 +35,18 @@
 
   function registraServiceWorker() {
     if (!("serviceWorker" in navigator)) return;
+
+    // Quando un nuovo service worker prende il controllo (nuova versione
+    // pubblicata), ricarica la pagina una sola volta per usare i file
+    // aggiornati: evita che l'app resti bloccata su una versione vecchia
+    // in cache dopo un aggiornamento.
+    let ricaricaGiaFatto = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (ricaricaGiaFatto) return;
+      ricaricaGiaFatto = true;
+      location.reload();
+    });
+
     window.addEventListener("load", () => {
       navigator.serviceWorker.register("sw.js").catch((err) => {
         console.error("Registrazione service worker fallita:", err);

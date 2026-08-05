@@ -241,7 +241,13 @@ const FunghiViews = (() => {
         const apiKey = document.getElementById("ai-apikey").value.trim();
         FunghiAI.setConfig({ endpoint, apiKey });
         window.mostraToast("Configurazione salvata ✓");
-        location.hash = "#/riconosci";
+
+        const card = document.querySelector(".card");
+        card.innerHTML = `
+          <h2 class="mt-0">✅ Configurazione salvata</h2>
+          <p>La API key è stata salvata su questo dispositivo. Ora puoi tornare alla schermata principale e analizzare una foto.</p>
+          <a href="#/riconosci" class="btn btn-block">Vai al riconoscimento</a>
+        `;
       });
     },
   };
