@@ -5,8 +5,9 @@
  * volta nella schermata Impostazioni e salvata solo su questo dispositivo
  * (localStorage).
  *
- * Formato di richiesta/risposta atteso di default: API Kindwise
- * (POST JSON { images:["data:image/jpeg;base64,..."] }, header "Api-Key",
+ * Formato di richiesta/risposta atteso di default: API Kindwise mushroom.id
+ * (endpoint https://mushroom.kindwise.com/api/v1/identification,
+ * POST JSON { images:["data:image/jpeg;base64,..."] }, header "Api-Key",
  * risposta result.classification.suggestions = [{name, probability}]).
  * Se usi un provider diverso, adatta solo la funzione `interpretaRisposta`.
  */

@@ -42,16 +42,20 @@ di un servizio di riconoscimento immagini per funghi.
 
 ### Con Kindwise (mushroom.id) — consigliato
 
-1. Vai su **https://mushroom.id** e registrati (email o account Google).
-   Il piano gratuito include un numero limitato di richieste al mese,
-   sufficiente per un uso personale occasionale.
-2. Nella tua area personale cerca la sezione **API / Developer** e genera
-   una **API key**.
-3. Prendi nota dell'endpoint di identificazione indicato nella
-   documentazione (tipicamente qualcosa come
-   `https://mushroom.id/api/v1/identification`).
-4. Apri FunghiAlpini → icona ⚙️ Impostazioni → incolla endpoint e API key →
+1. Vai su **https://admin.kindwise.com/signup** e crea un account gratuito
+   (username, email, password). Il piano gratuito include un numero
+   limitato di richieste al mese, sufficiente per un uso personale
+   occasionale.
+2. Dopo la registrazione entri nel pannello admin: la tua **API key** è già
+   generata, nella sezione "API keys".
+3. L'endpoint di identificazione è fisso:
+   `https://mushroom.kindwise.com/api/v1/identification` — nell'app è già
+   precompilato, non serve copiarlo a mano.
+4. Apri FunghiAlpini → icona ⚙️ Impostazioni → incolla la API key →
    **Salva**.
+
+Nota: il dominio `mushroom.id` (senza "kindwise") è in vendita e NON è il
+servizio giusto — usa sempre gli indirizzi `kindwise.com` indicati sopra.
 
 La chiave viene salvata **solo su questo dispositivo** (`localStorage` del
 browser): non viene mai inviata altrove se non al servizio AI che tu stesso

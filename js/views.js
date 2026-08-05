@@ -208,6 +208,8 @@ const FunghiViews = (() => {
   // ===================================================================
   // IMPOSTAZIONI
   // ===================================================================
+  const ENDPOINT_KINDWISE_DEFAULT = "https://mushroom.kindwise.com/api/v1/identification";
+
   const ViewImpostazioni = {
     render() {
       const { endpoint, apiKey } = FunghiAI.getConfig();
@@ -216,18 +218,17 @@ const FunghiViews = (() => {
 
         <div class="card">
           <h2 class="mt-0">🔑 Servizio di riconoscimento AI</h2>
-          <p class="text-muted">Il riconoscimento da foto usa un servizio esterno online. Serve una API key personale, gratuita per iniziare (con un numero limitato di richieste al mese).</p>
+          <p class="text-muted">Il riconoscimento da foto usa un servizio esterno online (Kindwise mushroom.id). Serve una API key personale, gratuita per iniziare (con un numero limitato di richieste al mese).</p>
 
-          <p class="passi-title">Come ottenerla (Kindwise mushroom.id):</p>
+          <p class="passi-title">Come ottenerla:</p>
           <ol class="passi-list">
-            <li>Vai su <strong>mushroom.id</strong> da un browser e registrati (email o Google).</li>
-            <li>Nella tua area personale, sezione API/Developer, genera una <strong>API key</strong>.</li>
-            <li>Copia l'endpoint indicato (di solito <code>https://mushroom.id/api/v1/identification</code>) e la key.</li>
-            <li>Incollali qui sotto e salva: resteranno solo su questo dispositivo.</li>
+            <li>Vai su <a href="https://admin.kindwise.com/signup" target="_blank" rel="noopener">admin.kindwise.com/signup</a> e crea un account gratuito (username, email, password).</li>
+            <li>Dopo la registrazione entri nel pannello admin: lì trovi la tua <strong>API key</strong> già pronta (sezione "API keys").</li>
+            <li>Copiala e incollala qui sotto, poi premi Salva. L'endpoint qui sotto è già precompilato: non serve toccarlo.</li>
           </ol>
 
           <label class="field-label" for="ai-endpoint">Endpoint API</label>
-          <input type="url" id="ai-endpoint" placeholder="https://mushroom.id/api/v1/identification" value="${escapeHtml(endpoint)}">
+          <input type="url" id="ai-endpoint" placeholder="${ENDPOINT_KINDWISE_DEFAULT}" value="${escapeHtml(endpoint || ENDPOINT_KINDWISE_DEFAULT)}">
           <label class="field-label" for="ai-apikey">API key</label>
           <input type="password" id="ai-apikey" placeholder="La tua API key" value="${escapeHtml(apiKey)}">
           <button type="button" class="btn btn-block" id="btn-salva-config" style="margin-top:14px;">Salva</button>
