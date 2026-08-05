@@ -4,6 +4,11 @@
  * Il router (js/router.js) inietta render() in #view-root e poi chiama afterRender().
  */
 const FunghiViews = (() => {
+  // Aumentare ad ogni pubblicazione: mostrata in fondo alla pagina Info,
+  // utile per confermare se il dispositivo ha davvero ricevuto l'ultimo
+  // aggiornamento o sta ancora usando una versione vecchia in cache.
+  const APP_VERSION = "2026-08-06.1";
+
   function escapeHtml(str) {
     return String(str ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -171,8 +176,17 @@ const FunghiViews = (() => {
       </div>`;
   }
 
-  function mostraRisultati(root, candidati, fotoUrl) {
-    const [principale, ...alternative] = candidati;
+  function chiaveCandidato(c) {
+    return c.specieLocale ? `specie:${c.specieLocale.id}` : `nome:${c.nome.toLowerCase().trim()}`;
+  }
+
+  function mostraRisultati(root, candidatiGrezzi, fotoUrl) {
+    const [principale, ...resto] = candidatiGrezzi;
+    // Filtro di sicurezza: il risultato principale non deve mai ricomparire
+    // tra le alternative, qualunque cosa abbia restituito il livello AI.
+    const chiavePrincipale = chiaveCandidato(principale);
+    const alternative = resto.filter((c) => chiaveCandidato(c) !== chiavePrincipale);
+
     const alternativeConfrontate = alternative.slice(0, 4).map((alt) => {
       const confronto = principale.specieLocale && alt.specieLocale
         ? FunghiData.confrontaSpecie(principale.specieLocale, alt.specieLocale)
@@ -276,6 +290,8 @@ const FunghiViews = (() => {
           <h2 class="mt-0">Privacy</h2>
           <p>La API key resta salvata solo su questo dispositivo. Le foto che analizzi vengono inviate al servizio AI che hai configurato tu stesso, e non vengono salvate da questa app.</p>
         </div>
+
+        <p class="text-muted" style="text-align:center;font-size:.78rem;">Versione app: ${APP_VERSION}</p>
       `;
     },
     afterRender() {},
