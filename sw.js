@@ -12,7 +12,7 @@
  * Incrementa CACHE_VERSION quando modifichi file dell'app shell per forzare
  * l'aggiornamento della cache sui dispositivi degli utenti.
  */
-const CACHE_VERSION = "v4";
+const CACHE_VERSION = "v5";
 const CACHE_NAME = `funghialpini-${CACHE_VERSION}`;
 
 const APP_SHELL = [

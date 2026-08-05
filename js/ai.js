@@ -57,17 +57,47 @@ const FunghiAI = (() => {
     }));
   }
 
-  /** Cerca una corrispondenza nel database locale a partire dal nome restituito dall'AI */
+  /**
+   * Cerca una corrispondenza nel database locale a partire dal nome
+   * restituito dall'AI. Richiede sempre almeno genere+specie (non solo il
+   * genere): un match sul solo genere abbinerebbe erroneamente specie
+   * diverse dello stesso genere (es. un Boletus non in database mostrato
+   * come fosse Boletus edulis) — pericoloso per la commestibilità indicata.
+   * Se non c'è un match sufficientemente preciso, meglio restituire null
+   * (la specie verrà segnalata come "non presente nel database locale").
+   */
   function abbinaSpecieLocale(nomeAI) {
-    const parole = nomeAI.toLowerCase().split(/\s+/).filter(Boolean);
-    const genere = parole[0] || "";
+    const nomeNorm = nomeAI.toLowerCase().trim();
     const tutte = FunghiData.all();
-    let trovato = tutte.find((s) => s.nome_scientifico.toLowerCase() === nomeAI.toLowerCase());
+
+    let trovato = tutte.find((s) => s.nome_scientifico.toLowerCase() === nomeNorm);
     if (trovato) return trovato;
-    trovato = tutte.find((s) => s.nome_scientifico.toLowerCase().startsWith(genere));
-    if (trovato) return trovato;
-    trovato = tutte.find((s) => s.nomi_comuni.some((n) => n.toLowerCase().includes(nomeAI.toLowerCase())));
+
+    const parole = nomeNorm.split(/\s+/).filter(Boolean);
+    if (parole.length >= 2) {
+      const genereSpecie = parole.slice(0, 2).join(" ");
+      trovato = tutte.find((s) => {
+        const sciNorm = s.nome_scientifico.toLowerCase();
+        return sciNorm === genereSpecie || sciNorm.startsWith(genereSpecie + " ");
+      });
+      if (trovato) return trovato;
+    }
+
+    trovato = tutte.find((s) => s.nomi_comuni.some((n) => n.toLowerCase() === nomeNorm));
     return trovato || null;
+  }
+
+  /** Se più suggerimenti dell'AI puntano alla stessa specie locale (o allo
+   * stesso nome, se non abbinata), tiene solo l'occorrenza con confidenza
+   * più alta: evita di mostrare la stessa specie due volte tra i risultati. */
+  function deduplica(candidati) {
+    const mappa = new Map();
+    for (const c of candidati) {
+      const chiave = c.specieLocale ? c.specieLocale.id : c.nome.toLowerCase().trim();
+      const esistente = mappa.get(chiave);
+      if (!esistente || c.confidenza > esistente.confidenza) mappa.set(chiave, c);
+    }
+    return Array.from(mappa.values());
   }
 
   /**
@@ -91,9 +121,8 @@ const FunghiAI = (() => {
     const grezzi = interpretaRisposta(json);
     if (grezzi.length === 0) throw new Error("NESSUN_CANDIDATO");
 
-    return grezzi
-      .map((c) => ({ ...c, specieLocale: abbinaSpecieLocale(c.nome) }))
-      .sort((a, b) => b.confidenza - a.confidenza);
+    const arricchiti = grezzi.map((c) => ({ ...c, specieLocale: abbinaSpecieLocale(c.nome) }));
+    return deduplica(arricchiti).sort((a, b) => b.confidenza - a.confidenza);
   }
 
   return { getConfig, setConfig, isConfigurato, identifica };

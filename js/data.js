@@ -42,14 +42,24 @@ const FunghiData = (() => {
     return (str || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
 
-  /** Cerca, nella lista "sosia" di una specie, la voce che si riferisce a un'altra specie */
+  /**
+   * Cerca, nella lista "sosia" di una specie, la voce che si riferisce a
+   * un'altra specie. Richiede un match su genere+specie (non sul solo
+   * genere): altrimenti, tra generi ricchi di voci come Boletus o Amanita,
+   * il confronto rischia di pescare la voce sbagliata solo perché due
+   * specie diverse condividono il genere.
+   */
   function trovaVoceSosia(specieA, specieB) {
     if (!specieA || !specieA.sosia) return null;
-    const nomiB = [specieB.nome_scientifico, ...specieB.nomi_comuni].map(normalizza);
+    const sciB = normalizza(specieB.nome_scientifico);
+    const genereSpecieB = sciB.split(" ").slice(0, 2).join(" ");
+    const comuniB = specieB.nomi_comuni.map(normalizza).filter((n) => n.length > 3);
+
     return (
       specieA.sosia.find((so) => {
         const nomeSo = normalizza(so.nome);
-        return nomiB.some((n) => nomeSo.includes(n.split(" ")[0]) || n.includes(nomeSo.split(" ")[0]));
+        if (genereSpecieB && nomeSo.includes(genereSpecieB)) return true;
+        return comuniB.some((n) => nomeSo.includes(n));
       }) || null
     );
   }
