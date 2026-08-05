@@ -42,6 +42,21 @@ const FunghiAI = (() => {
   }
 
   /**
+   * L'API Kindwise restituisce anche result.is_mushroom = { binary, probability,
+   * threshold }: una stima separata di quanto l'immagine assomigli DAVVERO a un
+   * fungo, indipendente dalla lista di specie candidate (che il servizio prova
+   * a restituire comunque, anche per foto di persone, oggetti, altre piante...).
+   * Se il campo è presente e binary è false, l'immagine non è un fungo: meglio
+   * dirlo chiaramente che mostrare specie "indovinate" senza senso.
+   * Se il campo manca (altro provider), non blocchiamo nulla.
+   */
+  function isFotoDiUnFungo(json) {
+    const info = json?.result?.is_mushroom;
+    if (!info || typeof info.binary !== "boolean") return true;
+    return info.binary;
+  }
+
+  /**
    * Adatta qui il parsing se il tuo provider ha un formato di risposta diverso.
    * Deve restituire un array di { nome, confidenza } con confidenza 0-1.
    */
@@ -118,6 +133,8 @@ const FunghiAI = (() => {
     if (!res.ok) throw new Error(`Errore del servizio AI (HTTP ${res.status})`);
 
     const json = await res.json();
+    if (!isFotoDiUnFungo(json)) throw new Error("NON_FUNGO");
+
     const grezzi = interpretaRisposta(json);
     if (grezzi.length === 0) throw new Error("NESSUN_CANDIDATO");
 

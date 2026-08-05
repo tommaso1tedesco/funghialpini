@@ -7,7 +7,7 @@ const FunghiViews = (() => {
   // Aumentare ad ogni pubblicazione: mostrata in fondo alla pagina Info,
   // utile per confermare se il dispositivo ha davvero ricevuto l'ultimo
   // aggiornamento o sta ancora usando una versione vecchia in cache.
-  const APP_VERSION = "2026-08-06.1";
+  const APP_VERSION = "2026-08-06.2";
 
   function escapeHtml(str) {
     return String(str ?? "").replace(/[&<>"']/g, (c) => ({
@@ -110,15 +110,19 @@ const FunghiViews = (() => {
       const candidati = await FunghiAI.identifica(file);
       mostraRisultati(root, candidati, fotoUrl);
     } catch (err) {
+      let icona = "⚠️";
       let msg;
       if (err.message === "OFFLINE") msg = "Sei offline: il riconoscimento richiede connessione internet. Riprova quando torni in rete.";
       else if (err.message === "NON_CONFIGURATO") msg = "Configura prima l'assistente AI nelle Impostazioni.";
-      else if (err.message === "NESSUN_CANDIDATO") msg = "Il servizio non ha restituito alcun risultato per questa foto. Prova con un'altra inquadratura, più nitida e ravvicinata.";
+      else if (err.message === "NON_FUNGO") {
+        icona = "🚫";
+        msg = "Questa foto non sembra contenere un fungo. Scatta una foto ravvicinata e a fuoco del fungo stesso, con buona luce.";
+      } else if (err.message === "NESSUN_CANDIDATO") msg = "Il servizio non ha restituito alcun risultato per questa foto. Prova con un'altra inquadratura, più nitida e ravvicinata.";
       else msg = "Errore durante l'analisi: " + err.message;
 
       root.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">⚠️</div>
+          <div class="empty-icon">${icona}</div>
           <p>${escapeHtml(msg)}</p>
           <button type="button" class="btn btn-secondary" id="btn-riprova">Torna indietro</button>
         </div>
