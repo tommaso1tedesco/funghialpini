@@ -198,9 +198,21 @@ code { background: var(--color-surface-alt); padding: 1px 5px; border-radius: 6p
   .disclaimer-box { background: #2a2013; color: #f1e2c8; }
 }
 
-.carattere-item { padding: 7px 0; border-bottom: 1px solid var(--color-border); font-size: .92rem; }
-.carattere-item:last-child { border-bottom: none; }
-.carattere-item .tratto { font-weight: 700; text-transform: capitalize; display: block; margin-bottom: 1px; color: var(--color-primary-dark); }
+.punti-chiave { list-style: none; margin: 10px 0 0; padding: 0; }
+.punti-chiave li {
+  position: relative;
+  padding: 8px 0 8px 26px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 1rem;
+}
+.punti-chiave li:last-child { border-bottom: none; }
+.punti-chiave li::before {
+  content: "🔎";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  font-size: .9rem;
+}
 
 .field-label { font-weight: 700; display: block; margin: 12px 0 6px; }
 input[type="text"], input[type="password"], input[type="url"] {
@@ -289,8 +301,6 @@ input[type="text"], input[type="password"], input[type="url"] {
   padding: 10px 12px;
   font-size: .92rem;
 }
-
-.caratteri-compact { margin-top: 10px; }
 
 /* ---------- Impostazioni ---------- */
 .passi-title { font-weight: 700; margin: 14px 0 6px; }

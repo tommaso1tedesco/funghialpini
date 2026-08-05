@@ -79,6 +79,13 @@
         "nome": "Boletus erythropus",
         "come_distinguerli": "pori arancio-rossi, gambo punteggiato di rosso su fondo giallo, carne che vira rapidamente al blu"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno o marrone",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -154,6 +161,13 @@
         "nome": "Boletus satanas (Fungo del diavolo)",
         "come_distinguerli": "pori rossi e carne che vira al blu al taglio"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno scuro o nero-bronzo",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -225,6 +239,13 @@
         "nome": "Boletus edulis",
         "come_distinguerli": "cappello meno rossastro, compare più tardi in stagione; entrambi commestibili"
       }
+    ],
+    "punti_chiave": [
+      "Cappello rosso-bruno o mattone",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini)"
     ]
   },
   {
@@ -297,6 +318,13 @@
         "nome": "Leccinum aurantiacum (Porcinello rosso)",
         "come_distinguerli": "cappello arancio-rossiccio invece che grigio-bruno, stessa gestione: cuocere sempre bene"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno grigiastro o nocciola",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
     ]
   },
   {
@@ -376,6 +404,13 @@
         "nome": "Omphalotus olearius (Fungo dell'olivo)",
         "come_distinguerli": "cresce a cespi su ceppi/radici (mai a terra isolato), lamelle vere fitte, colore arancio più intenso e uniforme, luminescente al buio (bioluminescenza), TOSSICO"
       }
+    ],
+    "punti_chiave": [
+      "Cappello giallo o arancio",
+      "Sotto il cappello ci sono pieghe spesse, non vere lamelle",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
     ]
   },
   {
@@ -446,6 +481,13 @@
         "nome": "Craterellus cinereus",
         "come_distinguerli": "pieghe più marcate sul lato esterno, differenza minima, entrambi commestibili"
       }
+    ],
+    "punti_chiave": [
+      "Cappello grigio o nero-brunastro",
+      "Sotto il cappello ci sono pieghe spesse, non vere lamelle",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -527,6 +569,13 @@
         "nome": "Amanita giovane (a 'uovo' non ancora aperta)",
         "come_distinguerli": "un esemplare giovane e chiuso di Macrolepiota va tagliato verticalmente: se all'interno si intravede la sagoma di un fungo completo avvolto in una volva/velo universale continuo, NON è una mazza di tamburo — scartare sempre gli esemplari chiusi non identificabili con certezza"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno su fondo bianco o nocciola",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova in prati o radure aperte, non dentro il bosco oppure in boschi misti"
     ]
   },
   {
@@ -603,6 +652,14 @@
         "nome": "Amanita phalloides (allo stadio 'uovo')",
         "come_distinguerli": "l'uovo di phalloides, se tagliato a metà verticalmente, mostra all'interno la sagoma di un cappello VERDOGNOLO o biancastro (mai arancio); il taglio dell'uovo intero è OBBLIGATORIO prima di raccogliere qualunque ovulo — se il colore interno non è inequivocabilmente arancio, scartare sempre. MORTALE"
       }
+    ],
+    "punti_chiave": [
+      "Cappello arancio o rosso-arancio",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -680,6 +737,14 @@
         "nome": "Amanita pantherina",
         "come_distinguerli": "cappello bruno (non rosso) con verruche bianche, volva a cercine netto alla base; anch'essa tossica/potenzialmente mortale"
       }
+    ],
+    "punti_chiave": [
+      "Cappello rosso o arancio-rosso",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -763,6 +828,14 @@
         "nome": "Volvariella (es. Volvariella gloiocephala)",
         "come_distinguerli": "lamelle ROSA a maturità (mai bianche), presenta volva ma manca sempre l'anello; se lamelle rosa e nessun anello, è comunque prudente evitare per il rischio di confusione"
       }
+    ],
+    "punti_chiave": [
+      "Cappello verdastro o verde-oliva",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
     ]
   },
   {
@@ -841,6 +914,14 @@
         "nome": "Amanita muscaria",
         "come_distinguerli": "cappello rosso vivo invece che bruno"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno o nocciola scuro",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
     ]
   },
   {
@@ -918,6 +999,14 @@
         "nome": "Amanita muscaria giovane",
         "come_distinguerli": "cappello che tende al rosso vivo anziché bruno-vinato"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-rosato o vinato",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
     ]
   },
   {
@@ -993,6 +1082,14 @@
         "nome": "Macrolepiota (piccole specie)",
         "come_distinguerli": "gambo zigrinato a serpente e anello scorrevole doppio, assenza di volva a sacco"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bianco",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -1069,6 +1166,13 @@
         "nome": "Kuehneromyces mutabilis (Pioppino)",
         "come_distinguerli": "gambo nettamente squamoso/scaglioso sotto l'anello e liscio sopra, sporata bruno ma cappello igrofano con zona centrale più scura a 'occhio di fagiano'; per la somiglianza estrema con Galerina, il pioppino è sconsigliato ai principianti"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-ocra o miele",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -1144,6 +1248,13 @@
         "nome": "Altri Cortinarius commestibili (es. C. praestans)",
         "come_distinguerli": "la distinzione tra le specie di Cortinarius richiede analisi microscopiche/chimiche: per un raccoglitore non esperto il genere va escluso in blocco"
       }
+    ],
+    "punti_chiave": [
+      "Cappello arancio-bruno o ruggine",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -1215,6 +1326,13 @@
         "nome": "Morchella esculenta (Spugnola vera)",
         "come_distinguerli": "cappello con alveoli REGOLARI a nido d'ape ben definiti (non contorto/cerebriforme), gambo e cappello completamente CAVI in un unico spazio continuo se tagliati verticalmente (verificare sempre tagliando il fungo intero a metà)"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-rossastro o marrone scuro",
+      "Sotto il cappello ci sono pieghe spesse, non vere lamelle",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini)"
     ]
   },
   {
@@ -1291,6 +1409,13 @@
         "nome": "Verpa bohemica",
         "come_distinguerli": "il cappello è attaccato al gambo solo alla sommità (come un ditale), non lungo tutto il margine come nelle vere Morchella; da consumare con ancora maggiore cautela"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-ocra o giallastro",
+      "Sotto il cappello ci sono pieghe spesse, non vere lamelle",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure in prati o radure aperte, non dentro il bosco"
     ]
   },
   {
@@ -1363,6 +1488,13 @@
         "nome": "Galerina marginata",
         "come_distinguerli": "sporata bruno-ruggine (non bianca), cespi più piccoli e radi, cappello senza squamette centrali; verificare SEMPRE la sporata prima di consumare funghi a cespo su legno. MORTALE"
       }
+    ],
+    "punti_chiave": [
+      "Cappello miele o bruno-giallastro",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
     ]
   },
   {
@@ -1441,6 +1573,13 @@
         "nome": "Panellus stipticus",
         "come_distinguerli": "molto più piccolo, gambo laterale corto ma presente, sapore amaro; non pericoloso ma di nessun valore alimentare"
       }
+    ],
+    "punti_chiave": [
+      "Cappello grigio o grigio-bruno",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -1517,6 +1656,13 @@
         "nome": "Lactarius deterrimus",
         "come_distinguerli": "molto simile, cresce sotto abete rosso, lattice che vira più rapidamente al verde; anch'esso commestibile, differenza minima"
       }
+    ],
+    "punti_chiave": [
+      "Cappello arancio o arancio-carota",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto conifere (abeti, pini)"
     ]
   },
   {
@@ -1588,6 +1734,13 @@
         "nome": "Lactarius deliciosus (Sanguinello)",
         "come_distinguerli": "margine del cappello liscio (non peloso/lanoso), lattice arancio (non bianco), sapore dolce non piccante; commestibile"
       }
+    ],
+    "punti_chiave": [
+      "Cappello rosa o rosa-arancio",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -1658,6 +1811,13 @@
         "nome": "Amanita phalloides",
         "come_distinguerli": "phalloides ha SEMPRE volva a sacco e anello, cappello liscio e lucido (mai a placche screpolate), gambo slanciato con bulbo; scavare sempre la base prima di consumare qualunque fungo verde. MORTALE se confusa"
       }
+    ],
+    "punti_chiave": [
+      "Cappello verde",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -1729,6 +1889,13 @@
         "nome": "Altre Russule rosse commestibili (es. Russula aurora)",
         "come_distinguerli": "la distinzione tra Russula rosse richiede il test del sapore (piccante = da scartare) e spesso analisi più esperte; per un principiante è prudente evitare tutte le Russule rosse"
       }
+    ],
+    "punti_chiave": [
+      "Cappello rosso o rosso vivo",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini)"
     ]
   },
   {
@@ -1803,6 +1970,13 @@
         "nome": "Altri Hydnum simili (Hydnum rufescens)",
         "come_distinguerli": "colore più arancio intenso e uniforme, cappello più regolare; entrambi commestibili, nessun rischio di confusione pericolosa"
       }
+    ],
+    "punti_chiave": [
+      "Cappello crema o arancio chiaro",
+      "Sotto il cappello ci sono tanti piccoli aculei/punte, non lamelle",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
     ]
   },
   {
@@ -1879,6 +2053,13 @@
         "nome": "Entoloma sinuatum",
         "come_distinguerli": "lamelle che a maturità diventano rosate (mai in Clitocybe nebularis), odore farinoso simile ma più sgradevole; TOSSICO grave"
       }
+    ],
+    "punti_chiave": [
+      "Cappello grigio o grigio-nebbia",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
     ]
   },
   {
@@ -1950,6 +2131,13 @@
         "nome": "Marasmius oreades (Gambesecche)",
         "come_distinguerli": "lamelle molto più RADE e spaziate (non fittissime come in Clitocybe dealbata), gambo elastico e coriaceo che si può torcere senza spezzarsi, cappello beige-nocciola (non bianco puro), si secca e rinverdisce con la pioggia senza marcire; la densità delle lamelle è il carattere più rapido da controllare"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bianco o bianco-crema",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
     ]
   },
   {
@@ -2021,6 +2209,13 @@
         "nome": "Coprinopsis atramentaria (Coprino grigio)",
         "come_distinguerli": "cappello grigio liscio (non bianco squamoso), contiene coprina: provoca reazione tossica grave se associato ad alcol anche assunto giorni dopo il pasto; da evitare in ogni caso in prossimità di consumo di alcolici"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bianco",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
     ]
   },
   {
@@ -2092,6 +2287,13 @@
         "nome": "Altri Tricholoma gialli (es. Tricholoma sulphureum)",
         "come_distinguerli": "T. sulphureum ha odore fortemente sgradevole di gas/gomma bruciata ed è tossico; per prudenza evitare il consumo di Tricholoma gialli in genere"
       }
+    ],
+    "punti_chiave": [
+      "Cappello giallo-verdastro o giallo oliva",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini)"
     ]
   },
   {
@@ -2166,6 +2368,13 @@
         "nome": "Piccoli funghi bruni commestibili in genere",
         "come_distinguerli": "il genere Inocybe è a rischio troppo alto e microscopicamente indistinguibile per un non esperto: la regola pratica è NON raccogliere mai piccoli funghi bruni lamellati non identificati con certezza da un esperto"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno o bruno-rossastro",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
     ]
   },
   {
@@ -2239,6 +2448,13 @@
         "nome": "Clitocybe dealbata",
         "come_distinguerli": "lamelle molto più FITTE (non rade), cappello bianco puro (non beige-nocciola), gambo fragile non elastico/torcibile; MORTALE — in caso di dubbio su un fungo in cerchio nel prato, scartare sempre"
       }
+    ],
+    "punti_chiave": [
+      "Cappello beige o nocciola chiaro",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
     ]
   },
   {
@@ -2309,6 +2525,13 @@
         "nome": "Macrolepiota procera (Mazza di tamburo)",
         "come_distinguerli": "lamelle e sporata SEMPRE bianche (mai verdastre), gambo alto e nettamente zigrinato 'a serpente' con doppio anello scorrevole; in caso di dubbio fare sempre la sporata"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bianco con squame brune",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
     ]
   },
   {
@@ -2385,6 +2608,13 @@
         "nome": "Boletus edulis",
         "come_distinguerli": "pori biancastri/olivastri (non rossi), carne che NON vira al blu"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bruno scuro",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
     ]
   },
   {
@@ -2460,6 +2690,13 @@
         "nome": "Boletus erythropus",
         "come_distinguerli": "gambo con granulazioni puntiformi rosse (non un vero reticolo a maglie), portamento meno tozzo, cappello bruno scuro non grigiastro"
       }
+    ],
+    "punti_chiave": [
+      "Cappello grigio chiaro o biancastro-grigiastro",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   },
   {
@@ -2535,6 +2772,1138 @@
         "nome": "Agaricus xanthodermus (Prataiolo giallastro)",
         "come_distinguerli": "vira nettamente al GIALLO cromo alla base del gambo se schiacciata (non nei prataioli buoni), odore di inchiostro/fenolo sgradevole; tossico, provoca disturbi gastrointestinali"
       }
+    ],
+    "punti_chiave": [
+      "Cappello bianco o bianco-crema",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
+    ]
+  },
+  {
+    "id": "entoloma-sinuatum",
+    "nome_scientifico": "Entoloma sinuatum",
+    "nomi_comuni": [
+      "Entoloma velenoso",
+      "Titubante"
+    ],
+    "commestibilita": "tossico",
+    "habitat": "Boschi di latifoglie (querce, tigli), radure erbose ai margini del bosco",
+    "habitat_tipo": [
+      "latifoglie",
+      "prateria"
+    ],
+    "stagione": "Autunno, anche con le prime piogge",
+    "stagione_tipo": [
+      "autunno"
+    ],
+    "descrizione": "Grande fungo biancastro-grigio, tra i più pericolosi per la frequente confusione con funghi commestibili di taglia simile. Provoca gravi disturbi gastrointestinali.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "bianco-grigiastro",
+      "crema",
+      "nocciola chiaro"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "grande (8-20 cm), grigio-crema o nocciola chiaro, liscio, carnoso, margine che resta a lungo arrotolato verso il basso"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle inizialmente giallastre, poi ROSA a maturità per la sporata rosa — carattere fondamentale del genere Entoloma"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "bianco, robusto, pieno, senza anello"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "bianca, soda"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "farinoso, di farina rancida — importante per il riconoscimento"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "rosa — carattere diagnostico chiave del genere Entoloma"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Clitocybe nebularis",
+        "come_distinguerli": "lamelle sempre bianco-crema (mai rosa), sporata bianca non rosa"
+      },
+      {
+        "nome": "Tricholoma terreum e altri Tricholoma commestibili",
+        "come_distinguerli": "lamelle bianche non rosa, sporata bianca"
+      },
+      {
+        "nome": "Calocybe gambosa (Prugnolo)",
+        "come_distinguerli": "cresce in primavera (non in autunno), cappello più piccolo, odore di farina FRESCA gradevole (non rancido), lamelle bianco-crema che non diventano mai rosa, sporata bianca"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bianco-grigiastro o crema",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure in prati o radure aperte, non dentro il bosco"
+    ]
+  },
+  {
+    "id": "omphalotus-olearius",
+    "nome_scientifico": "Omphalotus olearius",
+    "nomi_comuni": [
+      "Fungo dell'olivo",
+      "Falso gallinaccio arancione"
+    ],
+    "commestibilita": "tossico",
+    "habitat": "Alla base o su radici di ulivi e altre latifoglie, in grandi cespi",
+    "habitat_tipo": [
+      "latifoglie"
+    ],
+    "stagione": "Autunno",
+    "stagione_tipo": [
+      "autunno"
+    ],
+    "descrizione": "Fungo arancio brillante che cresce a folti cespi su legno; le lamelle sono debolmente bioluminescenti al buio. Provoca importanti disturbi gastrointestinali.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "arancio",
+      "arancio acceso"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "arancio uniforme brillante, imbutiforme, cresce sempre a cespi numerosi su legno/radici"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle strette, fitte, decorrenti, arancio, debolmente luminescenti al buio se fresche"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "arancio, curvo, affusolato alla base, senza anello"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "arancio pallido"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "poco marcato"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bianco-crema"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Cantharellus cibarius (Gallinaccio)",
+        "come_distinguerli": "il gallinaccio ha pieghe spesse (non vere lamelle sottili), colore giallo non arancio acceso, cresce isolato o in piccoli gruppi a terra, mai a cespi su legno/radici, odore fruttato di albicocca"
+      },
+      {
+        "nome": "Pleurotus ostreatus (Orecchione)",
+        "come_distinguerli": "colore grigio-bruno, non arancio; cresce a mensola su tronchi, non in cespi a terra alla base"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello arancio o arancio acceso",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
+    ]
+  },
+  {
+    "id": "paxillus-involutus",
+    "nome_scientifico": "Paxillus involutus",
+    "nomi_comuni": [
+      "Paxillo",
+      "Coniglina bruna"
+    ],
+    "commestibilita": "mortale",
+    "habitat": "Boschi di latifoglie e conifere, spesso vicino a betulle",
+    "habitat_tipo": [
+      "latifoglie",
+      "conifere",
+      "misto"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Un tempo consumato tradizionalmente in alcune zone, oggi sappiamo che il consumo, anche ripetuto nel tempo, può indurre una reazione immunitaria che distrugge i globuli rossi (sindrome immunoemolitica), potenzialmente fatale anche dopo anni di consumo apparentemente senza problemi.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "bruno olivastro",
+      "bruno-ocra"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": true,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "bruno-olivastro, margine arrotolato verso il basso (da cui il nome 'involutus'), vischioso a tempo umido"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle fitte, decorrenti, giallo-brune, che si SCURISCONO se sfregate con un dito — carattere diagnostico"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "corto, bruno chiaro, senza anello"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "giallastra, che imbrunisce"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "le lamelle si scuriscono al tocco/sfregamento"
+      },
+      {
+        "tratto": "odore",
+        "valore": "poco marcato"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bruna"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Lactarius spp. (Lattari commestibili)",
+        "come_distinguerli": "i Lactarius commestibili emettono un lattice (liquido) se le lamelle vengono incise; il Paxillus involutus non emette mai lattice"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bruno olivastro o bruno-ocra",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
+    ]
+  },
+  {
+    "id": "volvariella-gloiocephala",
+    "nome_scientifico": "Volvariella gloiocephala",
+    "nomi_comuni": [
+      "Volvaria grigia",
+      "Amanita di paglia"
+    ],
+    "commestibilita": "commestibile_con_cautela",
+    "habitat": "Prati, cumuli di paglia/compost, terreni concimati",
+    "habitat_tipo": [
+      "prateria"
+    ],
+    "stagione": "Primavera - autunno",
+    "stagione_tipo": [
+      "primavera",
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Fungo con volva simile alle Amanite ma privo di anello e con lamelle che diventano rosa a maturità. Commestibile ma da raccogliere solo con grande attenzione, per l'alto rischio di confusione con Amanite mortali giovani.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "grigio",
+      "grigio-brunastro",
+      "bianco-grigiastro"
+    ],
+    "anello": false,
+    "volva": true,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "grigio o grigio-brunastro, liscio, setoso, a volte fibrilloso"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle libere, bianche da giovani poi ROSA a maturità (sporata rosa, mai in Amanita)"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "bianco, slanciato, SENZA anello — carattere chiave che lo distingue dalle Amanite"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "presente, bianca, a sacco alla base — va scavata per essere vista"
+      },
+      {
+        "tratto": "carne",
+        "valore": "bianca"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "debole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "rosa"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Amanita phalloides / Amanita virosa",
+        "come_distinguerli": "le Amanite mortali hanno SEMPRE anello sul gambo (Volvariella non ce l'ha mai) e lamelle sempre bianche anche a maturità (mai rosa); controllare sia l'anello sia il colore delle lamelle prima di ogni raccolta. MORTALE se confusa"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello grigio o grigio-brunastro",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Alla base del gambo c'è un sacco avvolgente (volva): scava un po' la terra per vederlo",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
+    ]
+  },
+  {
+    "id": "kuehneromyces-mutabilis",
+    "nome_scientifico": "Kuehneromyces mutabilis",
+    "nomi_comuni": [
+      "Pioppino",
+      "Falso chiodino"
+    ],
+    "commestibilita": "commestibile_con_cautela",
+    "habitat": "Ceppi e tronchi di pioppo, salice e altre latifoglie, a cespi",
+    "habitat_tipo": [
+      "latifoglie"
+    ],
+    "stagione": "Primavera - autunno",
+    "stagione_tipo": [
+      "primavera",
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Buon commestibile ma molto simile alla mortale Galerina marginata: da raccogliere solo con grande esperienza, verificando sempre con attenzione i caratteri del gambo.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "bruno-nocciola",
+      "ocra"
+    ],
+    "anello": true,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "bruno-nocciola, igrofano: più scuro al centro se umido, a 'occhio di fagiano'"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle bruno-ocra, fitte"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "NETTAMENTE SQUAMOSO/scaglioso sotto l'anello e liscio sopra — carattere chiave per distinguerlo da Galerina"
+      },
+      {
+        "tratto": "anello",
+        "valore": "presente, membranoso, persistente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "bruno chiara"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "gradevole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bruno-ruggine"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Galerina marginata",
+        "come_distinguerli": "la differenza più affidabile è il gambo: liscio in Galerina, squamoso sotto l'anello in Kuehneromyces. La somiglianza è però talmente alta che la raccolta è sconsigliata a chi non ha grande esperienza. MORTALE se confusa"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-nocciola o ocra",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
+    ]
+  },
+  {
+    "id": "tylopilus-felleus",
+    "nome_scientifico": "Tylopilus felleus",
+    "nomi_comuni": [
+      "Fungo del fiele",
+      "Falso porcino amaro"
+    ],
+    "commestibilita": "da_non_consumare",
+    "habitat": "Boschi di conifere e latifoglie, spesso vicino a ceppi marcescenti",
+    "habitat_tipo": [
+      "conifere",
+      "latifoglie",
+      "misto"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Non è tossico ma è talmente amaro da rovinare qualsiasi piatto anche in minima quantità: frequente causa di raccolte di porcini rovinate.",
+    "imenoforo_tipo": "pori",
+    "colore_cappello": [
+      "bruno-nocciola",
+      "bruno chiaro"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": true,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "bruno-nocciola, molto simile a quello del porcino"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "pori bianchi da giovani poi ROSA a maturità — mai rosa nel vero porcino"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "con reticolo (venature) SCURO e marcato su tutta la lunghezza, non solo in alto"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "bianca, dal sapore AMARISSIMO — assaggiare solo un puntino piccolo e sputare, mai ingerire"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "i pori virano leggermente al rosa-bruno se schiacciati"
+      },
+      {
+        "tratto": "odore",
+        "valore": "poco marcato"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "rosa"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Boletus edulis (Porcino)",
+        "come_distinguerli": "pori bianchi/olivastri (mai rosa) nel vero porcino, reticolo chiaro presente solo nella parte alta del gambo (non scuro su tutta la lunghezza), sapore mai amaro"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-nocciola o bruno chiaro",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
+    ]
+  },
+  {
+    "id": "hygrophoropsis-aurantiaca",
+    "nome_scientifico": "Hygrophoropsis aurantiaca",
+    "nomi_comuni": [
+      "Falso gallinaccio",
+      "Finferla falsa"
+    ],
+    "commestibilita": "commestibile_con_cautela",
+    "habitat": "Boschi di conifere, su lettiera di aghi e legno marcescente",
+    "habitat_tipo": [
+      "conifere"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Assomiglia molto al gallinaccio ma ha vere lamelle sottili invece di pieghe. Commestibile ma di scarso valore; va sempre distinto con attenzione dal tossico fungo dell'olivo.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "arancio",
+      "arancio-bruno"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "arancio-bruno, vellutato, imbutiforme"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle VERE, sottili, fitte, forcate, facilmente separabili dal cappello (a differenza delle pieghe del vero gallinaccio)"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "arancio, sottile"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "arancio pallido"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "debole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bianca"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Cantharellus cibarius (Gallinaccio)",
+        "come_distinguerli": "il vero gallinaccio ha pieghe spesse non separabili (non vere lamelle sottili), colore più giallo che arancio, odore fruttato di albicocca"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello arancio o arancio-bruno",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini)"
+    ]
+  },
+  {
+    "id": "suillus-luteus",
+    "nome_scientifico": "Suillus luteus",
+    "nomi_comuni": [
+      "Pinarolo",
+      "Boleto giallo"
+    ],
+    "commestibilita": "commestibile_con_cautela",
+    "habitat": "Boschi di pino, spesso in gruppi numerosi",
+    "habitat_tipo": [
+      "conifere"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Boleto molto comune sotto i pini, cappello vischioso marrone-nocciola. Va sbucciato dalla pellicola vischiosa del cappello prima di cucinarlo, altrimenti può dare leggeri disturbi digestivi.",
+    "imenoforo_tipo": "pori",
+    "colore_cappello": [
+      "bruno-nocciola",
+      "marrone vischioso"
+    ],
+    "anello": true,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "bruno-nocciola, molto VISCIDO/appiccicoso al tatto specie con umidità, cuticola facilmente staccabile (va rimossa prima di cucinare)"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "pori piccoli, gialli"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "chiaro, con anello membranoso biancastro-violaceo persistente"
+      },
+      {
+        "tratto": "anello",
+        "valore": "presente, membranoso"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "giallastra"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "debole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bruno-olivastra"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Suillus grevillei",
+        "come_distinguerli": "cresce sotto larici (non pini), cappello più giallo-arancio; differenza minima, entrambi commestibili con le stesse cautele"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bruno-nocciola o marrone vischioso",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo ha un anello (un anellino) attorno",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini)"
+    ]
+  },
+  {
+    "id": "xerocomellus-chrysenteron",
+    "nome_scientifico": "Xerocomellus chrysenteron",
+    "nomi_comuni": [
+      "Boleto svelato",
+      "Porcinello bruno"
+    ],
+    "commestibilita": "commestibile_con_cautela",
+    "habitat": "Boschi di latifoglie e conifere, molto comune e diffuso",
+    "habitat_tipo": [
+      "latifoglie",
+      "conifere",
+      "misto"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Piccolo boleto comunissimo, cappello screpolato che lascia intravedere la carne rossastra sotto la cuticola. Commestibile modesto, da cuocere sempre bene.",
+    "imenoforo_tipo": "pori",
+    "colore_cappello": [
+      "bruno",
+      "bruno-olivastro"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": true,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "bruno, superficie che SI SCREPOLA a placche mostrando la carne rosata sottostante — carattere distintivo"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "pori giallo-olivastri che virano leggermente al blu-verde se premuti"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "giallastro con sfumature rossastre"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "che vira debolmente al bluastro"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "leggero, verso il bluastro"
+      },
+      {
+        "tratto": "odore",
+        "valore": "debole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "olivastra"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Boletus erythropus e altri boleti con viraggio intenso",
+        "come_distinguerli": "taglia molto più piccola e cappello vistosamente screpolato a placche, non presente negli altri boleti"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bruno o bruno-olivastro",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
+    ]
+  },
+  {
+    "id": "laccaria-amethystina",
+    "nome_scientifico": "Laccaria amethystina",
+    "nomi_comuni": [
+      "Laccaria ametista",
+      "Fungo violetto"
+    ],
+    "commestibilita": "commestibile",
+    "habitat": "Boschi di latifoglie e conifere, su muschio",
+    "habitat_tipo": [
+      "latifoglie",
+      "conifere",
+      "misto"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Piccolo fungo dal colore viola/lilla intenso e uniforme, molto riconoscibile. Commestibile ma di modesto valore; va raccolto solo in zone non inquinate perché accumula facilmente metalli pesanti dal terreno.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "viola",
+      "lilla",
+      "ametista"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "piccolo, viola-lilla intenso quando è umido, sbiadisce a nocciola chiaro seccandosi"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle spesse, rade, dello stesso colore viola del cappello"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "fibroso, viola, slanciato"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "violacea pallida"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "debole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bianca"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Cortinarius violaceus e altri Cortinarius viola",
+        "come_distinguerli": "i Cortinarius hanno la cortina (velo a ragnatela) da giovani e sporata ruggine (non bianca come Laccaria)"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello viola o lilla",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
+    ]
+  },
+  {
+    "id": "calocybe-gambosa",
+    "nome_scientifico": "Calocybe gambosa",
+    "nomi_comuni": [
+      "Prugnolo",
+      "Marzuolo"
+    ],
+    "commestibilita": "commestibile",
+    "habitat": "Prati, radure erbose, margini di bosco e siepi",
+    "habitat_tipo": [
+      "prateria"
+    ],
+    "stagione": "Primavera (marzo-maggio)",
+    "stagione_tipo": [
+      "primavera"
+    ],
+    "descrizione": "Uno dei primi e più apprezzati funghi primaverili, spesso in cerchi nell'erba. Da non confondere con specie tossiche autunnali di colore simile.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "bianco-crema",
+      "crema"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "bianco-crema, carnoso, compatto, margine arrotolato"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle fitte, bianco-crema, smarginate"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "corto, tozzo, bianco, pieno"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "bianca, soda"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "molto caratteristico di farina FRESCA, intenso e gradevole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bianca"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Entoloma sinuatum",
+        "come_distinguerli": "l'Entoloma è autunnale (il prugnolo è primaverile), ha odore di farina RANCIDA/sgradevole (non fresco), lamelle che diventano rosa a maturità (mai nel prugnolo). TOSSICO"
+      },
+      {
+        "nome": "Inocybe spp.",
+        "come_distinguerli": "molto più piccole, odore sgradevole; regola pratica: non raccogliere mai piccoli funghi bruni-bianchi non identificati con certezza"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello bianco-crema o crema",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova in prati o radure aperte, non dentro il bosco"
+    ]
+  },
+  {
+    "id": "lepista-nuda",
+    "nome_scientifico": "Lepista nuda",
+    "nomi_comuni": [
+      "Agarico violetto",
+      "Pied bleu"
+    ],
+    "commestibilita": "commestibile_con_cautela",
+    "habitat": "Boschi, cumuli di foglie e aghi, giardini, spesso in cerchi",
+    "habitat_tipo": [
+      "latifoglie",
+      "conifere",
+      "misto"
+    ],
+    "stagione": "Autunno tardo - inizio inverno",
+    "stagione_tipo": [
+      "autunno",
+      "inverno"
+    ],
+    "descrizione": "Fungo dal colore viola/lilla intenso su tutto il carpoforo, molto apprezzato ma da consumare solo ben cotto e in quantità moderate perché può causare intolleranze in alcune persone.",
+    "imenoforo_tipo": "lamelle",
+    "colore_cappello": [
+      "viola",
+      "lilla intenso"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "viola-lilla intenso, carnoso, convesso poi appianato"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "lamelle fitte, viola, smarginate"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "viola-bluastro, fibroso, spesso rigonfio alla base"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "violacea chiara, soda"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno"
+      },
+      {
+        "tratto": "odore",
+        "valore": "fruttato/aromatico, gradevole"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "rosa-crema chiaro"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Cortinarius violaceus e altri Cortinarius viola",
+        "come_distinguerli": "i Cortinarius hanno la cortina (velo a ragnatela) da giovani e sporata ruggine scura (non rosa-crema chiaro); in caso di dubbio tra funghi viola scartare, alcuni Cortinarius sono molto tossici"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello viola o lilla intenso",
+      "Sotto il cappello ci sono lamelle sottili, come le pagine di un libro",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni) oppure sotto conifere (abeti, pini) oppure in boschi misti"
+    ]
+  },
+  {
+    "id": "scleroderma-citrinum",
+    "nome_scientifico": "Scleroderma citrinum",
+    "nomi_comuni": [
+      "Scleroderma",
+      "Falso tartufo",
+      "Vescia terrestre velenosa"
+    ],
+    "commestibilita": "tossico",
+    "habitat": "Boschi di conifere e latifoglie, terreni acidi e sabbiosi",
+    "habitat_tipo": [
+      "conifere",
+      "latifoglie",
+      "misto"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Fungo globoso che ricorda un piccolo tartufo o una vescia (Lycoperdon) commestibile, ma è tossico. Va sempre tagliato a metà per un controllo prima di qualunque raccolta di funghi 'a palla'.",
+    "imenoforo_tipo": "pori",
+    "colore_cappello": [
+      "giallo-bruno",
+      "ocra screpolato"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": false,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "corpo globoso 'a palla', senza vero cappello o gambo distinto, superficie spessa giallo-bruna screpolata a placche verrucose"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "non applicabile: l'interno (gleba) è la parte fertile"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "praticamente assente, corpo quasi sessile"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "interno (gleba) SCURO, quasi nero-violaceo a maturità, marmorizzato — mai bianco puro; consistenza dura, gommosa"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "nessuno di rilievo"
+      },
+      {
+        "tratto": "odore",
+        "valore": "sgradevole, di gomma"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "bruno-nerastra"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Lycoperdon perlatum e altre vesce commestibili",
+        "come_distinguerli": "tagliare SEMPRE a metà prima di raccogliere: le vesce commestibili giovani hanno interno BIANCO PURO e OMOGENEO (mai scuro o marmorizzato); se l'interno non è bianco puro, scartare sempre, anche per minime sfumature scure"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello giallo-bruno o ocra screpolato",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli, la carne NON cambia colore",
+      "Si trova sotto conifere (abeti, pini) oppure sotto latifoglie (querce, faggi, castagni) oppure in boschi misti"
+    ]
+  },
+  {
+    "id": "fistulina-hepatica",
+    "nome_scientifico": "Fistulina hepatica",
+    "nomi_comuni": [
+      "Lingua di bue",
+      "Fungo del fegato"
+    ],
+    "commestibilita": "commestibile",
+    "habitat": "Tronchi vivi o morti di castagno e quercia",
+    "habitat_tipo": [
+      "latifoglie"
+    ],
+    "stagione": "Estate - autunno",
+    "stagione_tipo": [
+      "estate",
+      "autunno"
+    ],
+    "descrizione": "Fungo a mensola dall'aspetto insolito, simile a una lingua o un pezzo di fegato crudo, che 'sanguina' un liquido rossastro se premuto. Commestibile, sapore acidulo.",
+    "imenoforo_tipo": "pori",
+    "colore_cappello": [
+      "rosso-bruno",
+      "rosso fegato"
+    ],
+    "anello": false,
+    "volva": false,
+    "viraggio": true,
+    "caratteri_riconoscimento": [
+      {
+        "tratto": "cappello",
+        "valore": "a forma di mensola/lingua, rosso-bruno come fegato crudo, superficie gelatinosa/rugosa che essuda un liquido rossastro se premuta"
+      },
+      {
+        "tratto": "imenoforo",
+        "valore": "pori minuti, giallo-biancastri, che imbruniscono/arrossano se toccati"
+      },
+      {
+        "tratto": "gambo",
+        "valore": "assente o molto breve e laterale (fungo sessile a mensola)"
+      },
+      {
+        "tratto": "anello",
+        "valore": "assente"
+      },
+      {
+        "tratto": "volva",
+        "valore": "assente"
+      },
+      {
+        "tratto": "carne",
+        "valore": "rosso-venata, simile a carne di manzo se tagliata, sapore acidulo"
+      },
+      {
+        "tratto": "viraggio al taglio",
+        "valore": "i pori arrossano/imbruniscono al tocco"
+      },
+      {
+        "tratto": "odore",
+        "valore": "debole, acidulo"
+      },
+      {
+        "tratto": "sporata",
+        "valore": "rosata"
+      }
+    ],
+    "sosia": [
+      {
+        "nome": "Nessun sosia pericoloso rilevante",
+        "come_distinguerli": "l'aspetto a lingua rosso-fegato è molto distintivo e difficilmente confondibile con altre specie di questo database"
+      }
+    ],
+    "punti_chiave": [
+      "Cappello rosso-bruno o rosso fegato",
+      "Sotto il cappello NON ci sono lamelle ma tanti forellini piccoli (pori)",
+      "Il gambo NON ha nessun anello",
+      "Se lo tagli o lo schiacci, la carne o l'imenoforo cambiano colore",
+      "Si trova sotto latifoglie (querce, faggi, castagni)"
     ]
   }
 ]

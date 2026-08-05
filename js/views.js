@@ -141,13 +141,10 @@ const FunghiViews = (() => {
     }
 
     const nomeComune = s.nomi_comuni[0] || s.nome_scientifico;
-    const caratteriHtml = principale
-      ? `<div class="caratteri-compact">
-          ${s.caratteri_riconoscimento
-            .slice(0, 6)
-            .map((car) => `<div class="carattere-item"><span class="tratto">${escapeHtml(car.tratto)}</span>${escapeHtml(car.valore)}</div>`)
-            .join("")}
-        </div>`
+    const caratteriHtml = principale && s.punti_chiave
+      ? `<ul class="punti-chiave">
+          ${s.punti_chiave.map((punto) => `<li>${escapeHtml(punto)}</li>`).join("")}
+        </ul>`
       : "";
 
     const confrontoHtml = confrontoCon
