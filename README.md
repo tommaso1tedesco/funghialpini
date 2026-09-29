@@ -35,12 +35,25 @@ offline dopo il primo caricamento, grazie al service worker.
   dell'AI — l'AI riconosce la specie nella foto, il database locale dice se
   è commestibile e come distinguerla dai sosia pericolosi.
 
-## Configurare il riconoscimento AI (obbligatorio)
+## Configurazione del riconoscimento AI
 
-Senza questa configurazione l'app non può analizzare foto. Serve una API key
-di un servizio di riconoscimento immagini per funghi.
+L'app include già una **chiave condivisa incorporata nel codice**
+(`DEFAULT_API_KEY` in `js/ai.js`): chiunque apra il link può analizzare
+foto da subito, senza registrarsi. Questa chiave ha una quota gratuita
+mensile condivisa fra tutti gli utenti dell'app.
 
-### Con Kindwise (mushroom.id) — consigliato
+⚠️ **Attenzione alla sicurezza**: essendo un sito statico, il codice
+sorgente (chiave inclusa) è leggibile da chiunque apra gli strumenti
+sviluppatore del browser. È una scelta deliberata per semplicità, non una
+pratica sicura: chi lo desidera può copiare la chiave e consumarne la
+quota. Se in futuro questo diventa un problema, l'unica soluzione robusta
+è spostare la chiamata dietro un piccolo server/proxy che tenga la chiave
+nascosta lato server.
+
+Ogni utente può comunque impostare una propria chiave personale in
+Impostazioni, che ha sempre la priorità su quella condivisa.
+
+### Ottenere una chiave personale (facoltativo, con Kindwise mushroom.id)
 
 1. Vai su **https://admin.kindwise.com/signup** e crea un account gratuito
    (username, email, password). Il piano gratuito include un numero

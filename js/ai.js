@@ -1,30 +1,54 @@
 /**
  * ai.js — riconoscimento funghi da foto tramite servizio esterno
  * (es. Kindwise mushroom.id o compatibile). È la funzione centrale
- * dell'app: richiede connessione e una API key personale, inserita una
- * volta nella schermata Impostazioni e salvata solo su questo dispositivo
- * (localStorage).
+ * dell'app: richiede connessione e una API key.
  *
  * Formato di richiesta/risposta atteso di default: API Kindwise mushroom.id
  * (endpoint https://mushroom.kindwise.com/api/v1/identification,
  * POST JSON { images:["data:image/jpeg;base64,..."] }, header "Api-Key",
  * risposta result.classification.suggestions = [{name, probability}]).
  * Se usi un provider diverso, adatta solo la funzione `interpretaRisposta`.
+ *
+ * ATTENZIONE — chiave incorporata nel codice:
+ * DEFAULT_API_KEY qui sotto è la chiave personale del proprietario dell'app,
+ * inserita direttamente nel codice per scelta esplicita (per far funzionare
+ * l'app a chiunque riceva il link, senza doversi registrare a propria volta).
+ * Essendo un sito statico, questo codice è leggibile da chiunque apra gli
+ * strumenti sviluppatore del browser: chi lo desidera può copiare la chiave
+ * e consumare la quota associata. Se in futuro questo diventa un problema
+ * (quota esaurita, uso improprio), l'unica soluzione robusta è spostare la
+ * chiamata dietro un piccolo server/proxy che la tenga nascosta.
+ * Ogni utente può comunque impostare una propria chiave in Impostazioni:
+ * se presente, ha sempre la precedenza su questa di default.
  */
 const FunghiAI = (() => {
   const KEY_ENDPOINT = "funghialpini_ai_endpoint";
   const KEY_APIKEY = "funghialpini_ai_api_key";
 
+  const DEFAULT_ENDPOINT = "https://mushroom.kindwise.com/api/v1/identification";
+  const DEFAULT_API_KEY = "TnmAQHyqh9KZ69mbGjBDe3jmgq9k5iI0BIqYwgIWIJ221znxKf";
+
   function getConfig() {
     return {
-      endpoint: localStorage.getItem(KEY_ENDPOINT) || "",
-      apiKey: localStorage.getItem(KEY_APIKEY) || "",
+      endpoint: localStorage.getItem(KEY_ENDPOINT) || DEFAULT_ENDPOINT,
+      apiKey: localStorage.getItem(KEY_APIKEY) || DEFAULT_API_KEY,
     };
   }
 
   function setConfig({ endpoint, apiKey }) {
     localStorage.setItem(KEY_ENDPOINT, endpoint || "");
     localStorage.setItem(KEY_APIKEY, apiKey || "");
+  }
+
+  /** true se l'utente ha impostato una propria chiave (sostituisce quella condivisa) */
+  function haChiavePersonale() {
+    return Boolean(localStorage.getItem(KEY_APIKEY));
+  }
+
+  /** Torna a usare la chiave condivisa incorporata nell'app */
+  function usaChiaveCondivisa() {
+    localStorage.removeItem(KEY_ENDPOINT);
+    localStorage.removeItem(KEY_APIKEY);
   }
 
   function isConfigurato() {
@@ -142,5 +166,5 @@ const FunghiAI = (() => {
     return deduplica(arricchiti).sort((a, b) => b.confidenza - a.confidenza);
   }
 
-  return { getConfig, setConfig, isConfigurato, identifica };
+  return { getConfig, setConfig, haChiavePersonale, usaChiaveCondivisa, isConfigurato, identifica };
 })();

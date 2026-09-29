@@ -7,7 +7,7 @@ const FunghiViews = (() => {
   // Aumentare ad ogni pubblicazione: mostrata in fondo alla pagina Info,
   // utile per confermare se il dispositivo ha davvero ricevuto l'ultimo
   // aggiornamento o sta ancora usando una versione vecchia in cache.
-  const APP_VERSION = "2026-08-06.2";
+  const APP_VERSION = "2026-08-06.3";
 
   function escapeHtml(str) {
     return String(str ?? "").replace(/[&<>"']/g, (c) => ({
@@ -227,13 +227,21 @@ const FunghiViews = (() => {
 
   const ViewImpostazioni = {
     render() {
+      const haChiavePersonale = FunghiAI.haChiavePersonale();
       const { endpoint, apiKey } = FunghiAI.getConfig();
+
+      const statoHtml = haChiavePersonale
+        ? `<div class="disclaimer-box" style="border-color:var(--color-primary);background:var(--color-surface-alt);color:inherit;">✅ Stai usando una tua chiave personale.</div>`
+        : `<div class="disclaimer-box" style="border-color:var(--color-primary);background:var(--color-surface-alt);color:inherit;">✅ L'app è già pronta all'uso con una chiave condivisa: non devi fare nulla per iniziare ad analizzare foto.</div>`;
+
       return `
         <h1>Impostazioni</h1>
 
+        ${statoHtml}
+
         <div class="card">
-          <h2 class="mt-0">🔑 Servizio di riconoscimento AI</h2>
-          <p class="text-muted">Il riconoscimento da foto usa un servizio esterno online (Kindwise mushroom.id). Serve una API key personale, gratuita per iniziare (con un numero limitato di richieste al mese).</p>
+          <h2 class="mt-0">🔑 Usa una tua chiave personale (facoltativo)</h2>
+          <p class="text-muted">La chiave condivisa ha una quota limitata di richieste al mese in comune tra tutti. Se prevedi di usare l'app spesso, puoi impostare una tua chiave gratuita personale, che ha priorità su quella condivisa.</p>
 
           <p class="passi-title">Come ottenerla:</p>
           <ol class="passi-list">
@@ -243,10 +251,11 @@ const FunghiViews = (() => {
           </ol>
 
           <label class="field-label" for="ai-endpoint">Endpoint API</label>
-          <input type="url" id="ai-endpoint" placeholder="${ENDPOINT_KINDWISE_DEFAULT}" value="${escapeHtml(endpoint || ENDPOINT_KINDWISE_DEFAULT)}">
+          <input type="url" id="ai-endpoint" placeholder="${ENDPOINT_KINDWISE_DEFAULT}" value="${escapeHtml(haChiavePersonale ? endpoint : "")}">
           <label class="field-label" for="ai-apikey">API key</label>
-          <input type="password" id="ai-apikey" placeholder="La tua API key" value="${escapeHtml(apiKey)}">
-          <button type="button" class="btn btn-block" id="btn-salva-config" style="margin-top:14px;">Salva</button>
+          <input type="password" id="ai-apikey" placeholder="${haChiavePersonale ? "" : "Vuoto = usa quella condivisa"}" value="${escapeHtml(haChiavePersonale ? apiKey : "")}">
+          <button type="button" class="btn btn-block" id="btn-salva-config" style="margin-top:14px;">Salva chiave personale</button>
+          ${haChiavePersonale ? `<button type="button" class="btn btn-ghost btn-block" id="btn-usa-condivisa" style="margin-top:10px;">Torna alla chiave condivisa</button>` : ""}
         </div>
       `;
     },
@@ -254,16 +263,32 @@ const FunghiViews = (() => {
       document.getElementById("btn-salva-config").addEventListener("click", () => {
         const endpoint = document.getElementById("ai-endpoint").value.trim();
         const apiKey = document.getElementById("ai-apikey").value.trim();
-        FunghiAI.setConfig({ endpoint, apiKey });
-        window.mostraToast("Configurazione salvata ✓");
+        if (!apiKey) {
+          window.mostraToast("Inserisci una API key, oppure lascia questa pagina per continuare a usare quella condivisa.");
+          return;
+        }
+        FunghiAI.setConfig({ endpoint: endpoint || ENDPOINT_KINDWISE_DEFAULT, apiKey });
+        window.mostraToast("Chiave personale salvata ✓");
 
-        const card = document.querySelector(".card");
-        card.innerHTML = `
-          <h2 class="mt-0">✅ Configurazione salvata</h2>
-          <p>La API key è stata salvata su questo dispositivo. Ora puoi tornare alla schermata principale e analizzare una foto.</p>
-          <a href="#/riconosci" class="btn btn-block">Vai al riconoscimento</a>
+        document.getElementById("view-root").innerHTML = `
+          <h1>Impostazioni</h1>
+          <div class="card">
+            <h2 class="mt-0">✅ Configurazione salvata</h2>
+            <p>La tua chiave personale è stata salvata su questo dispositivo. Ora puoi tornare alla schermata principale e analizzare una foto.</p>
+            <a href="#/riconosci" class="btn btn-block">Vai al riconoscimento</a>
+          </div>
         `;
       });
+
+      const btnCondivisa = document.getElementById("btn-usa-condivisa");
+      if (btnCondivisa) {
+        btnCondivisa.addEventListener("click", () => {
+          FunghiAI.usaChiaveCondivisa();
+          window.mostraToast("Torni a usare la chiave condivisa ✓");
+          location.hash = "#/riconosci";
+          setTimeout(() => { location.hash = "#/impostazioni"; }, 30);
+        });
+      }
     },
   };
 
